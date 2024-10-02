@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="940.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.notas.controladores.InicioControlador">
+   <children>
+       <Label layoutX="27.0" layoutY="35.0" text="Nombre:" />
+       <TextField fx:id="txtNombre" layoutX="100.0" layoutY="30.0" minWidth="270.0" />
+
+       <Label layoutX="27.0" layoutY="81.0" text="Apellido:" />
+       <TextField fx:id="txtApellido" layoutX="100.0" layoutY="77.0" minWidth="270.0" />
+
+
+
+       <Label layoutX="31.0" layoutY="122.0" text="Correo:" />
+       <TextField fx:id="txtCorreo" layoutX="100.0" layoutY="118.0" minWidth="270.0" />
+
+       <Label layoutX="28.0" layoutY="165.0" text="Número:" />
+       <TextField fx:id="txtNumero" layoutX="100.0" layoutY="161.0" minWidth="270.0" />
+
+       <Label layoutX="12.0" layoutY="274.0" text="URL de la foto de perfil:" />
+       <TextField fx:id="txtUrlFoto" layoutX="145.0" layoutY="270.0" minWidth="270.0" />
+
+       <!-- Añadimos ImageView para mostrar la imagen -->
+
+
+
+       <Button fx:id="btnNuevoContacto"
+               layoutX="25.0"
+               layoutY="360.0"
+               minHeight="32.0"
+               onAction="#crearContacto"
+               prefHeight="32.0"
+               prefWidth="115.0"
+               style="-fx-background-color: #3370ff;"
+               text="Crear nueva contacto"
+               textFill="#ffffff" />
+
+       <Label layoutX="13.0" layoutY="208.0" prefHeight="26.0" prefWidth="76.0" text="Día de nacimiento" />
+       <DatePicker fx:id="dateNacimiento" layoutX="100.0" layoutY="208.0" prefHeight="26.0" prefWidth="270.0" />
+
+       <TableView fx:id="tablaNotas" layoutX="564.0" layoutY="261.0" prefHeight="125.0" prefWidth="323.0">
+           <columns>
+               <!-- Nueva columna para mostrar la foto de perfil -->
+               <TableColumn fx:id="colFotoPerfil" text="Foto de Perfil" />
+               <TableColumn fx:id="colNombre" text="Nombre" />
+               <TableColumn fx:id="colApellido" text="Apellido" />
+               <TableColumn fx:id="colNumero" text="Número" />
+               <TableColumn fx:id="colCorreo" text="Correo" />
+               <TableColumn fx:id="colFecha" text="Fecha creación" />
+               
+               <TableColumn fx:id="colNacimiento" text="Día de nacimiento" />
+               <TableColumn fx:id="colUrlFoto" text="URL de la Foto" />
+           </columns>
+   </TableView>
+       <!-- Imagen del perfil y etiqueta del último contacto creado -->
+       <ImageView fx:id="imgFotoPerfil" fitHeight="150" fitWidth="150" layoutX="543.0" layoutY="15.0" />
+       <VBox alignment="CENTER" layoutX="645.0" layoutY="43.0" prefHeight="112.0" prefWidth="150.0">
+           <Label text="Nombre:" />
+           <Label fx:id="lblNombre" />
+           <Label text="Número:" />
+           <Label fx:id="lblNumero" />
+
+       </VBox>
+
+       <Button layoutX="289.0" layoutY="360.0" mnemonicParsing="false" onAction="#eliminarContacto" prefHeight="32.0" prefWidth="115.0" style="-fx-background-color: #f54a45;" text="Eliminar contacto" textFill="#ffffff" />
+
+       <Button layoutX="161.0" layoutY="360.0" mnemonicParsing="false" onAction="#actualizarContacto" prefHeight="32.0" prefWidth="115.0" style="-fx-background-color: #3370ff;" text="Actualizar Contacto" textFill="#ffffff" />
+
+
+   </children>
+</AnchorPane>
